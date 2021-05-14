@@ -7,7 +7,6 @@ export const THEME_SIZE = {
   },
   INDENT: {
     DEFAULT: '24px',
-    CONTENT: '12px',
   },
   LAYOUT: {
     DEFAULT: '1200px',
@@ -16,4 +15,8 @@ export const THEME_SIZE = {
     DEFAULT: '16px',
     SMALL: '14px',
   },
+  RADIUS: {
+    FIELD: '5px',
+    BUTTON: '5px',
+  }
 };
