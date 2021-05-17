@@ -1,3 +1,7 @@
 {
-  
+  "SIGNUP_FORM": {
+    "LOGIN": {
+      "REQUIRED": "ОБЯЗАТЕЛЬНОЕ ПОЛЕ"
+    }
+  }
 }

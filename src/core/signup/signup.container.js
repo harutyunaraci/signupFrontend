@@ -38,12 +38,12 @@ export function SignupContainer() {
       isPending={isRequestPending(state.signupForm)}
       isError={isRequestError(state.signupForm)}
       isSuccess={isRequestSuccess(state.signupForm)}
-      errorMessage={getRequestErrorMessage(state.signupForm)}
       initialValue={signupFormGetInitialValue()}
       validation={signupFormValidation}
       onSubmitForm={signupFormSendData}
       fieldName={SIGNUP_FORM_FIELD_NAME}
       pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.signupForm)}
     />
   );
 }

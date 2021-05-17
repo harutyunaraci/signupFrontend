@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { FieldPrimary } from '../../../../lib/elements/field';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryButton } from '../../../../lib/elements/button';
+import { FormLoader } from '../../../../lib/elements/loader'
 
 import { spacing } from '../../../../lib/theme';
 
@@ -62,13 +63,8 @@ export function SignupFormComponent(props) {
           valueTid="SIGNUP.SIGNUP_FORM.BUTTON"
           disabled={isSubmitDisabled()}
         />
+        <FormLoader />
         {isPending && 'LOADING...'}
-        {errorMessage && (
-          <div style={{ display: 'grid', gap: '5px', marginTop: 10 }}>
-            <span>{errorMessage[0]}</span>
-            <span>{errorMessage[1]}</span>
-          </div>
-        )}
       </Container>
     </form>
   );

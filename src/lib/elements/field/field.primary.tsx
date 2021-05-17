@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import React from 'react';
 
 import { TextSecondary } from '../text';
-import { PrimaryInput } from '../input'
+import { PrimaryInput } from '../input';
+import { ErrorMessage } from '../error'
 
 import { spacing } from '../../theme';
 import { FieldPrimaryPropsType } from './field.type';
-
-import { THEME_COLOR, THEME_SIZE } from '../../theme'
 
 import { text } from '../../common/text';
 
@@ -32,7 +31,9 @@ export function FieldPrimary(props: FieldPrimaryPropsType) {
         name={name}
         placeholder={text(placeholderTid)}
       />
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {error && (
+        <InputError tid='ERROR.SIGNUP_FORM.FIELD' tidValue={{ ERROR_MESSAGE: error }} />
+      )}
     </Container>
   );
 }
@@ -46,7 +47,6 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const ErrorMessage = styled.span`
-  color: ${THEME_COLOR.INPUT_ERROR};
-  font-size: ${THEME_SIZE.FONT.SMALL};
-`;
+const InputError = styled(ErrorMessage)`
+  margin-top: 5px;
+`
