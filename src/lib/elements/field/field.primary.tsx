@@ -20,7 +20,7 @@ export function FieldPrimary(props: FieldPrimaryPropsType) {
     value,
     error,
   } = props;
-
+  
   return (
     <Container>
       <Title tid={titleTid} />
@@ -32,14 +32,14 @@ export function FieldPrimary(props: FieldPrimaryPropsType) {
         placeholder={text(placeholderTid)}
       />
       {error && (
-        <InputError tid='ERROR.SIGNUP_FORM.FIELD' tidValue={{ ERROR_MESSAGE: error }} />
+        <InputError error={error} />
       )}
     </Container>
   );
 }
 
 const Title = styled(TextSecondary)`
-  margin-bottom: ${spacing(1.5)};
+  margin-bottom: ${spacing(1)};
 `;
 
 const Container = styled.div`
@@ -48,5 +48,5 @@ const Container = styled.div`
 `;
 
 const InputError = styled(ErrorMessage)`
-  margin-top: 5px;
+  margin-top: ${spacing(1)};
 `

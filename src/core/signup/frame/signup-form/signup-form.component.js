@@ -6,6 +6,7 @@ import { FieldPrimary } from '../../../../lib/elements/field';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { FormLoader } from '../../../../lib/elements/loader'
+import { FormError } from '../../../../lib/elements/error'
 
 import { spacing } from '../../../../lib/theme';
 
@@ -26,6 +27,7 @@ export function SignupFormComponent(props) {
     errorMessage,
     pageLoading,
   } = props;
+  console.log(errorMessage);
 
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
@@ -63,8 +65,9 @@ export function SignupFormComponent(props) {
           valueTid="SIGNUP.SIGNUP_FORM.BUTTON"
           disabled={isSubmitDisabled()}
         />
-        <FormLoader />
-        {isPending && 'LOADING...'}
+
+        {errorMessage && <FormError tid={'ERROR.SIGNUP_FORM.' + errorMessage} />}
+        {isPending && <FormLoader />}
       </Container>
     </form>
   );

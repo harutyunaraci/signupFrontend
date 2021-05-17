@@ -1,5 +1,5 @@
 {
   "SIGNUP_FORM": {
-    "FIELD": "ОШИБКА : {{ERROR_MESSAGE}}"
+    "SIGN_UP_USERNAME_ALREADY_EXISTS": "Логин занят. Попробуйте другой"
   }
 }

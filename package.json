@@ -9,6 +9,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@material-ui/core": "^4.11.4",
     "@types/react-redux": "^7.1.16",
     "@unly/universal-language-detector": "^2.0.3",
     "@zeit/next-css": "^1.0.1",
