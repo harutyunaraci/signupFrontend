@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-export function FormLoader() {
+export function FormLoader(props) {
+  const {width, height} = props;
+  const FormLoaderContainer = styled.div`
+    position: relative;
+    width: ${width}px;
+    height: ${height}px;
+  `;
+
   return (
     <FormLoaderContainer>
-      <Image src="/static/img/testloader.gif" width={25} height={25} />
+      <Image src="/static/img/testloader.gif" layout='fill' />
     </FormLoaderContainer>
   );
 }
-
-const FormLoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-`;

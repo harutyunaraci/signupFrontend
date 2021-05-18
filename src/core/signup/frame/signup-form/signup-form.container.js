@@ -9,7 +9,6 @@ export function SignupFormContainer(props) {
   const LOGIN_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.LOGIN];
   const PASSOWORD_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.PASSOWORD];
   const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
-  console.log(errorMessage);
   return (
     <div>
       <Formik

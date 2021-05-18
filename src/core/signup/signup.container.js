@@ -18,7 +18,7 @@ export function SignupContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
     state: state[SIGNUP_STORE_NAME],
-    pageLoading: state[NAVIGATION_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   const signupFormSendData = (values) => {

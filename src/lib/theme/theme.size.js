@@ -14,6 +14,7 @@ export const THEME_SIZE = {
   FONT: {
     DEFAULT: '16px',
     SMALL: '14px',
+    MEDIUM: '22px',
   },
   RADIUS: {
     FIELD: '5px',
