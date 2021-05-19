@@ -4,6 +4,7 @@ import ERROR from './error.json';
 import STATIC from './static.json';
 import SIGNUP from './signup.json';
 import USERS from './users.json'
+import STATUS from './status.json'
 
 export const RU = {
   translation: {
@@ -13,5 +14,6 @@ export const RU = {
     STATIC,
     SIGNUP,
     USERS,
+    STATUS,
   },
 };

@@ -1,16 +1,16 @@
 import React from 'react';
-
 import styled from 'styled-components';
-import { THEME_SIZE, THEME_COLOR } from '../../../../lib/theme';
+
+import { text } from '../../../../lib/common/text';
+import { THEME_COLOR } from '../../../../lib/theme';
 
 import { UsersListItem } from '../../../../lib/elements/list-item';
-
-import { spacing } from '../../../../lib/theme';
+import { ListLayout } from '../../../../lib/elements/layout'
 
 export function UsersAllComponent(props) {
   const { userData } = props;
   return (
-    <Container>
+    <ListLayout>
       {userData
         ? userData.map((user, index) => (
             <>
@@ -22,8 +22,8 @@ export function UsersAllComponent(props) {
               {userData[index + 1] && <UsersAllSeparator />}
             </>
           ))
-        : 'Загрузка'}
-    </Container>
+        : text('STATUS.LOADING')}
+    </ListLayout>
   );
 }
 
@@ -31,9 +31,4 @@ const UsersAllSeparator = styled.span`
   width: '100%';
   background-color: ${THEME_COLOR.SEPARATOR};
   height: 1px;
-`;
-
-const Container = styled.div`
-  display: grid;
-  gap: ${spacing(2)};
 `;

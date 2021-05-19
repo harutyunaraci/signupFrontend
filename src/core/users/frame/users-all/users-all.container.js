@@ -1,7 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import { spacing } from '../../../../lib/theme';
 
 import { UsersAllLayout } from '../../../../lib/elements/layout';
 import { UsersAllComponent } from './users-all.component';
