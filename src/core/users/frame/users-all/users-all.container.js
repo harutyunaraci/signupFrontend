@@ -5,6 +5,7 @@ import { UsersAllComponent } from './users-all.component';
 import { PrimaryText } from '../../../../lib/elements/text';
 
 export function UsersAllContainer(props) {
+  console.log(props);
   return (
     <UsersAllLayout>
       <PrimaryText tid="USERS.USERS_LIST.HEADER" />

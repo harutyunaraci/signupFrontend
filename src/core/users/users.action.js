@@ -16,12 +16,8 @@ export function usersActionLoadUserData() {
       const usersData = await res.data
 
       dispatch({
-        type: USERS_ACTION_TYPE.USER_DATA,
-        usersData: usersData
-      })
-
-      dispatch({
         type: USERS_ACTION_TYPE.USER_LIST_UPLOAD_SUCCESS,
+        usersData
       });
 
     } catch (error) {

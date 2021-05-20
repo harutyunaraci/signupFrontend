@@ -1,4 +1,5 @@
 import { USERS_ACTION_TYPE } from './users.type';
+import { USERS_USERSLIST_STORE_NAME } from './users.constants'
 import {
   initRequestState,
   setRequestPending,
@@ -8,7 +9,6 @@ import {
 
 const initialState = {
   usersList: initRequestState(),
-  users: null,
 };
 
 export function usersStore(state = initialState, action) {
@@ -22,18 +22,13 @@ export function usersStore(state = initialState, action) {
     case USERS_ACTION_TYPE.USER_LIST_UPLOAD_SUCCESS:
       return {
         ...state,
-        usersList: setRequestSuccess(state.usersList),
+        usersList: setRequestSuccess(state.usersList, action.usersData),
       };
 
     case USERS_ACTION_TYPE.USER_LIST_UPLOAD_ERROR:
       return {
         ...state,
         usersList: setRequestError(state.usersList, action.errorMessage),
-      };
-    case USERS_ACTION_TYPE.USER_DATA:
-      return {
-        ...state,
-        users: action.usersData,
       };
 
     default:

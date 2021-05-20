@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { text } from '../../../../lib/common/text';
 import { THEME_COLOR } from '../../../../lib/theme';
 
-import { UsersListItem } from '../../../../lib/elements/list-item';
+import { ListItem } from '../../../../lib/elements/list-item';
 import { ListLayout } from '../../../../lib/elements/layout'
 
 export function UsersAllComponent(props) {
@@ -13,14 +13,12 @@ export function UsersAllComponent(props) {
     <ListLayout>
       {userData
         ? userData.map((user, index) => (
-            <>
-              <UsersListItem
-                key={user + index}
-                id={user.id}
-                login={user.login}
+            <div key={user + index}>
+              <ListItem
+                user={user}
               />
               {userData[index + 1] && <UsersAllSeparator />}
-            </>
+            </div>
           ))
         : text('STATUS.LOADING')}
     </ListLayout>
