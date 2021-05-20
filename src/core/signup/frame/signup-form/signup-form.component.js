@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { FieldPrimary } from '../../../../lib/elements/field';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { FormLoader } from '../../../../lib/elements/loader';
-import { FormError } from '../../../../lib/elements/error';
+import { CommonLoader } from '../../../../lib/elements/loader';
+import { CommonError } from '../../../../lib/elements/error';
 
 import { spacing } from '../../../../lib/theme';
 
@@ -65,20 +65,17 @@ export function SignupFormComponent(props) {
           disabled={isSubmitDisabled()}
         />
 
-        {errorMessage && (
-          <FormError tid={'ERROR.SIGNUP_FORM.' + errorMessage} />
-        )}
-        {pageLoading && <Loader width={17} height={17} />}
-        
+        {errorMessage && <CommonError tid={'ERROR.' + errorMessage} />}
+        {isPending && <Loader width={17} height={17} />}
       </Container>
     </form>
   );
 }
 
-const Loader = styled(FormLoader)`
+const Loader = styled(CommonLoader)`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Container = styled.div`
   display: grid;

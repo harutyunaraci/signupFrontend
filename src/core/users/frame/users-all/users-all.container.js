@@ -5,11 +5,15 @@ import { UsersAllComponent } from './users-all.component';
 import { PrimaryText } from '../../../../lib/elements/text';
 
 export function UsersAllContainer(props) {
-  console.log(props);
+  const { isPending, isError, isSuccess, errorMessage, userData } = props;
   return (
     <UsersAllLayout>
       <PrimaryText tid="USERS.USERS_LIST.HEADER" />
-      <UsersAllComponent userData={props.userData} />
+      <UsersAllComponent
+        userData={userData}
+        isPending={isPending}
+        errorMessage={errorMessage}
+      />
     </UsersAllLayout>
   );
 }

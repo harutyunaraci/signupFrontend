@@ -6,7 +6,7 @@ import { THEME_SIZE } from '../../theme/theme.size';
 import { spacing } from '../../theme';
 import { text } from '../../common/text';
 
-export function FormError(props: FormErrorPropsType) {
+export function CommonError(props: FormErrorPropsType) {
   return (
     <Error>
       <Image src="/static/img/error.svg" width={16} height={16} />

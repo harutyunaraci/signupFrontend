@@ -1,1 +1,1 @@
-export { FormLoader } from './form.loader'
+export { CommonLoader } from './common.loader'

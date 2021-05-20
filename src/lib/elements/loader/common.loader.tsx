@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-export function FormLoader(props) {
+export function CommonLoader(props) {
   const {width, height} = props;
   const FormLoaderContainer = styled.div`
     position: relative;

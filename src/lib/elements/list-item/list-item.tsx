@@ -23,8 +23,8 @@ export function ListItem({ user }) {
   return (
     <UserItemLayout>
       <UserDataLayout>
-        {Object.entries(user).map((userdata) => (
-          <ListItemData datatype={userdata[0]}>
+        {Object.entries(user).map((userdata, index) => (
+          <ListItemData key={userdata[0] + index} datatype={userdata[0]}>
             {getListItemFieldName(userdata[0])
               ? ''.concat(getListItemFieldName(userdata[0]), ' ', userdata[1])
               : userdata[1]}

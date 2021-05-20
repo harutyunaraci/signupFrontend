@@ -20,7 +20,7 @@ export const NavigationObserver = () => {
   };
 
   useEffect(() => {
-    dispatch(setPageLoading(true));
+    dispatch(setPageLoading(false));
 
     router.events.on('routeChangeStart', routeChangeStart);
     router.events.on('routeChangeComplete', routeChangeComplete);

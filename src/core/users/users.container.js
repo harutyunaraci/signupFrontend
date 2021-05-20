@@ -8,9 +8,14 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 
 import { UsersAllContainer } from './frame/users-all';
 
-import { getRequestData } from '../../main/store/store.service';
 
-import { performUserDataList } from './users.convert';
+import { getRequestData } from '../../main/store/store.service';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
 export function UsersContainer() {
   const dispatch = useDispatch();
@@ -22,10 +27,12 @@ export function UsersContainer() {
     state: state[USERS_STORE_NAME],
     // pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-
-  const userdata = getRequestData(state.usersList, []).map((user) =>
-    performUserDataList(user),
+  console.log(isRequestPending(state.signupForm));
+  return (
+    <UsersAllContainer
+      userData={getRequestData(state.usersList, [])}
+      isPending={isRequestPending(state.signupForm)}
+      errorMessage={getRequestErrorMessage(state.signupForm)}
+    />
   );
-
-  return <UsersAllContainer userData={userdata} />;
 }
